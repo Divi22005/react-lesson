@@ -8,7 +8,7 @@ const App13 = () => {
     setNumber(e.target.value);
   };
 
-  const inputNumber = parseint(number);
+  const inputNumber = parseInt(number);
   const isValid = !isNaN(inputNumber);
 
   return (
