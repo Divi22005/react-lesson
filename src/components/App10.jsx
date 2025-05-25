@@ -1,77 +1,47 @@
-import React, { useState } from "react";
-
+import React from "react";
+import { useState } from "react";
 export default function App10() {
-  const productsData = [
-    { name: "Product1", price: 25 },
-    { name: "Product2", price: 50 },
-  ];
-
-  const [cart, setCart] = useState([]);
-
-  const handleAdd = (product) => {
-    const existing = cart.find((item) => item.name === product.name);
-    if (existing) {
-      const updated = cart.map((item) =>
-        item.name === product.name
-          ? { ...item, quantity: item.quantity + 1 }
-          : item
-      );
-      setCart(updated);
-    } else {
-      setCart([...cart, { ...product, quantity: 1 }]);
-    }
+  const [products, setProducts] = useState([
+    { id: 1, name: "Product 1", price: 23 },
+    { id: 2, name: "Product 2", price: 30 },
+    { id: 3, name: "Product 3", price: 35 },
+  ]);
+  const [cart, setCart] = useState({});
+  const addToCart = (id) => {
+    !cart[id] && setCart({ ...cart, [id]: 1 });
   };
-
-  const increment = (name) => {
-    setCart((prevCart) =>
-      prevCart.map((item) =>
-        item.name === name ? { ...item, quantity: item.quantity + 1 } : item
-      )
-    );
+  const increment = (id) => {
+    setCart({ ...cart, [id]: cart[id] + 1 });
   };
-
-  const decrement = (name) => {
-    setCart((prevCart) =>
-      prevCart
-        .map((item) =>
-          item.name === name
-            ? { ...item, quantity: item.quantity - 1 }
-            : item
-        )
-        .filter((item) => item.quantity > 0)
-    );
+  const decrement = (id) => {
+    setCart({ ...cart, [id]: cart[id] - 1 });
   };
-
-  const removeItem = (name) => {
-    setCart((prevCart) => prevCart.filter((item) => item.name !== name));
-  };
-
   return (
     <div>
-      <h1>Products</h1>
-      {productsData.map((product) => (
-        <div key={product.name}>
-          {product.name} - ${product.price}{" "}
-          <button onClick={() => handleAdd(product)}>Add</button>
-        </div>
-      ))}
-
+      <h1>App 10</h1>
+      <h2>Assignment</h2>
+      <h3>Products</h3>
+      <ol>
+        {products.map((value) => (
+          <li key={value.id}>
+            {value.name}-{value.price}-
+            <button onClick={() => addToCart(value.id)}>Add</button>
+          </li>
+        ))}
+      </ol>
       <hr />
-      <h2>Cart</h2>
-      {cart.length === 0 ? (
-        <p>Cart is empty</p>
-      ) : (
-        <ol>
-          {cart.map((item) => (
-            <li key={item.name}>
-              {item.name} - ${item.price}{" "}
-              <button onClick={() => decrement(item.name)}>-</button>{" "}
-              {item.quantity}{" "}
-              <button onClick={() => increment(item.name)}>+</button>{" "}
-              = Total: ${item.price * item.quantity}{" "}  
+      <h3>My Cart</h3>
+      {products.map(
+        (value) =>
+          cart[value.id] && (
+            <li key={value.id}>
+              {value.name}-{value.price}-
+              <button onClick={() => decrement(value.id)}>-</button>
+              {cart[value.id]}-
+              <button onClick={() => increment(value.id)}>+</button>-
+              {value.price * cart[value.id]}
             </li>
-          ))}
-        </ol>
+          )
       )}
     </div>
   );
