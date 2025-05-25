@@ -68,8 +68,7 @@ export default function App10() {
               <button onClick={() => decrement(item.name)}>-</button>{" "}
               {item.quantity}{" "}
               <button onClick={() => increment(item.name)}>+</button>{" "}
-              = Total: ${item.price * item.quantity}{" "}
-              <button onClick={() => removeItem(item.name)}>Delete</button>
+              = Total: ${item.price * item.quantity}{" "}  
             </li>
           ))}
         </ol>
