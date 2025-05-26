@@ -19,6 +19,7 @@ import "./App.css";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import App12 from "./components/App12";
 import App11 from "./components/App11";
+import App14 from "./components/App14";
 function App() {
   return (
     <BrowserRouter>
@@ -38,6 +39,7 @@ function App() {
         <Route path="/app11" element={<App11 />}></Route>
         <Route path="/app12" element={<App12 />}></Route>
         <Route path="/app13" element={<App13 />}></Route>
+        <Route path="/app14" element={<App14 />}></Route>
       </Routes>
       <Footer />
     </BrowserRouter>
