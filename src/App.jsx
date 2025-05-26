@@ -20,6 +20,7 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import App12 from "./components/App12";
 import App11 from "./components/App11";
 import App14 from "./components/App14";
+import App15 from "./components/App15";
 function App() {
   return (
     <BrowserRouter>
@@ -40,6 +41,7 @@ function App() {
         <Route path="/app12" element={<App12 />}></Route>
         <Route path="/app13" element={<App13 />}></Route>
         <Route path="/app14" element={<App14 />}></Route>
+        <Route path="/app15" element={<App15 />}></Route>
       </Routes>
       <Footer />
     </BrowserRouter>
