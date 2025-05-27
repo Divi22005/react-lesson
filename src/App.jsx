@@ -6,23 +6,23 @@ import App2 from "./components/App2";
 import App3 from "./components/App3";
 import App4 from "./components/App4";
 import App5 from "./components/App5";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
 import Fruit from "./components/Fruit";
 import App6 from "./components/App6";
 import App7 from "./components/App7";
 import App8 from "./components/App8";
 import App9 from "./components/App9";
 import App10 from "./components/App10";
-import App13 from "./components/App13";
-import "./App.css";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import App12 from "./components/App12";
 import App11 from "./components/App11";
+import App12 from "./components/App12";
+import App13 from "./components/App13";
 import App14 from "./components/App14";
 import App15 from "./components/App15";
 import App16 from "./components/App16";
 import App17 from "./components/App17";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import "./App.css";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 function App() {
   return (
     <BrowserRouter>
