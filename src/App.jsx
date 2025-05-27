@@ -1,6 +1,10 @@
 import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import "./App.css";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import App1 from "./components/App1";
 import App2 from "./components/App2";
 import App3 from "./components/App3";
@@ -21,10 +25,6 @@ import App16 from "./components/App16";
 import App17 from "./components/App17";
 import App18 from "./components/App18";
 import App19 from "./components/App19";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import "./App.css";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 function App() {
   return (
     <BrowserRouter>
