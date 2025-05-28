@@ -53,7 +53,7 @@ function App() {
         <Route path="/app18" element={<App18 />}></Route>
         <Route path="/app19" element={<App19 />}></Route>
         <Route path="/app20" element={<App20 />}></Route>
-
+        <Route path="/app21" element={<App21 />}></Route>
       </Routes>
       <Footer />
     </BrowserRouter>
